@@ -1,0 +1,6 @@
+framework module Pods_snappergram_snappergramUITests {
+  umbrella header "Pods-snappergram-snappergramUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

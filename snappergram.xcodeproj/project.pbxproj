@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */; };
 		7181B8C524B37DE400500479 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C724B37DE400500479 /* SceneDelegate.m */; };
 		7181B8CB24B37DE400500479 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8CA24B37DE400500479 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 		7181B8D624B37DE500500479 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8D524B37DE500500479 /* main.m */; };
 		7181B8E024B37DE500500479 /* snappergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8DF24B37DE500500479 /* snappergramTests.m */; };
 		7181B8EB24B37DE500500479 /* snappergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8EA24B37DE500500479 /* snappergramUITests.m */; };
+		A10A7AB2AED9955F06459AFE /* Pods_snappergramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */; };
+		B4CA67F40F14501295F69A2A /* Pods_snappergram_snappergramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182296E8583E4ACB329F481F /* Pods-snappergramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergramTests.release.xcconfig"; path = "Target Support Files/Pods-snappergramTests/Pods-snappergramTests.release.xcconfig"; sourceTree = "<group>"; };
+		1FB45A68E4A46BC97907A60F /* Pods-snappergram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram.release.xcconfig"; path = "Target Support Files/Pods-snappergram/Pods-snappergram.release.xcconfig"; sourceTree = "<group>"; };
+		3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram_snappergramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.release.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7181B8C024B37DE400500479 /* snappergram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snappergram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7181B8C324B37DE400500479 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7181B8C424B37DE400500479 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +62,10 @@
 		7181B8E624B37DE500500479 /* snappergramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snappergramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7181B8EA24B37DE500500479 /* snappergramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snappergramUITests.m; sourceTree = "<group>"; };
 		7181B8EC24B37DE500500479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7263F337682EEFDB546184BC /* Pods-snappergramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergramTests.debug.xcconfig"; path = "Target Support Files/Pods-snappergramTests/Pods-snappergramTests.debug.xcconfig"; sourceTree = "<group>"; };
+		729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB46F6A5BDDAA15C22699D7 /* Pods-snappergram-snappergramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.debug.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C44EA2EF5C0AAE67928C05BC /* Pods-snappergram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram.debug.xcconfig"; path = "Target Support Files/Pods-snappergram/Pods-snappergram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A10A7AB2AED9955F06459AFE /* Pods_snappergramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,12 +89,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4CA67F40F14501295F69A2A /* Pods_snappergram_snappergramUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F7A5A7FD2D3280A68500E4B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C44EA2EF5C0AAE67928C05BC /* Pods-snappergram.debug.xcconfig */,
+				1FB45A68E4A46BC97907A60F /* Pods-snappergram.release.xcconfig */,
+				7CB46F6A5BDDAA15C22699D7 /* Pods-snappergram-snappergramUITests.debug.xcconfig */,
+				62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */,
+				7263F337682EEFDB546184BC /* Pods-snappergramTests.debug.xcconfig */,
+				182296E8583E4ACB329F481F /* Pods-snappergramTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7181B8B724B37DE400500479 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +117,8 @@
 				7181B8DE24B37DE500500479 /* snappergramTests */,
 				7181B8E924B37DE500500479 /* snappergramUITests */,
 				7181B8C124B37DE400500479 /* Products */,
+				5F7A5A7FD2D3280A68500E4B /* Pods */,
+				ACFE5E3C41937BDAC90070A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +168,16 @@
 			path = snappergramUITests;
 			sourceTree = "<group>";
 		};
+		ACFE5E3C41937BDAC90070A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */,
+				487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */,
+				729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7181B8EF24B37DE500500479 /* Build configuration list for PBXNativeTarget "snappergram" */;
 			buildPhases = (
+				BC307E51A510E27553BE84FC /* [CP] Check Pods Manifest.lock */,
 				7181B8BC24B37DE400500479 /* Sources */,
 				7181B8BD24B37DE400500479 /* Frameworks */,
 				7181B8BE24B37DE400500479 /* Resources */,
+				1BF6EC10E00A23722A92B506 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7181B8F224B37DE500500479 /* Build configuration list for PBXNativeTarget "snappergramTests" */;
 			buildPhases = (
+				2D318CBBA2595CEB9FEADA19 /* [CP] Check Pods Manifest.lock */,
 				7181B8D724B37DE500500479 /* Sources */,
 				7181B8D824B37DE500500479 /* Frameworks */,
 				7181B8D924B37DE500500479 /* Resources */,
@@ -179,9 +223,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7181B8F524B37DE500500479 /* Build configuration list for PBXNativeTarget "snappergramUITests" */;
 			buildPhases = (
+				5D10DBCD4889B0C0A4A9C226 /* [CP] Check Pods Manifest.lock */,
 				7181B8E224B37DE500500479 /* Sources */,
 				7181B8E324B37DE500500479 /* Frameworks */,
 				7181B8E424B37DE500500479 /* Resources */,
+				25D974F192FBF4272B066CEC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -261,6 +307,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BF6EC10E00A23722A92B506 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snappergram/Pods-snappergram-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snappergram/Pods-snappergram-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snappergram/Pods-snappergram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		25D974F192FBF4272B066CEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D318CBBA2595CEB9FEADA19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snappergramTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D10DBCD4889B0C0A4A9C226 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snappergram-snappergramUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC307E51A510E27553BE84FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-snappergram-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7181B8BC24B37DE400500479 /* Sources */ = {
@@ -437,6 +586,7 @@
 		};
 		7181B8F024B37DE500500479 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C44EA2EF5C0AAE67928C05BC /* Pods-snappergram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -454,6 +604,7 @@
 		};
 		7181B8F124B37DE500500479 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FB45A68E4A46BC97907A60F /* Pods-snappergram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +622,7 @@
 		};
 		7181B8F324B37DE500500479 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7263F337682EEFDB546184BC /* Pods-snappergramTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -491,6 +643,7 @@
 		};
 		7181B8F424B37DE500500479 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182296E8583E4ACB329F481F /* Pods-snappergramTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +664,7 @@
 		};
 		7181B8F624B37DE500500479 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB46F6A5BDDAA15C22699D7 /* Pods-snappergram-snappergramUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8652WRRVFY;
@@ -529,6 +683,7 @@
 		};
 		7181B8F724B37DE500500479 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8652WRRVFY;
