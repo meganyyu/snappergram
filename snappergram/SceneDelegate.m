@@ -7,6 +7,11 @@
 //
 
 #import "SceneDelegate.h"
+#import <Parse/Parse.h>
+
+static NSString *const kMainStoryboardID = @"Main";
+static NSString *const kHomeViewControllerID = @"HomeViewController";
+static NSString *const kHomeNavigationControllerID = @"HomeNavigationController";
 
 @interface SceneDelegate ()
 
@@ -19,6 +24,15 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+    
+    PFUser *user = [PFUser currentUser];
+    if (user != nil) {
+        NSLog(@"Welcome back %@ 😀", user.username);
+
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboardID bundle:nil];
+        UIViewController *homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:kHomeNavigationControllerID];
+        self.window.rootViewController = homeNavigationController;
+    }
 }
 
 

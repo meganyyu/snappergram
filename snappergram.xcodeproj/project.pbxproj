@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */; };
 		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
+		7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82324B3C80000CB80E4 /* LoginViewController.m */; };
+		7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
 		7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C724B37DE400500479 /* SceneDelegate.m */; };
-		7181B8CB24B37DE400500479 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8CA24B37DE400500479 /* ViewController.m */; };
 		7181B8CE24B37DE400500479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7181B8CC24B37DE400500479 /* Main.storyboard */; };
 		7181B8D024B37DE500500479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7181B8CF24B37DE500500479 /* Assets.xcassets */; };
 		7181B8D324B37DE500500479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7181B8D124B37DE500500479 /* LaunchScreen.storyboard */; };
@@ -44,13 +45,15 @@
 		3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram_snappergramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.release.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7157C82224B3C80000CB80E4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		7157C82324B3C80000CB80E4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7157C82524B3CA6800CB80E4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7157C82624B3CA6800CB80E4 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7181B8C024B37DE400500479 /* snappergram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = snappergram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7181B8C324B37DE400500479 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7181B8C424B37DE400500479 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7181B8C624B37DE400500479 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		7181B8C724B37DE400500479 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		7181B8C924B37DE400500479 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7181B8CA24B37DE400500479 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7181B8CD24B37DE400500479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7181B8CF24B37DE500500479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7181B8D224B37DE500500479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -109,6 +112,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		7157C82024B3C7E400CB80E4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7157C82924B3CA7900CB80E4 /* Login View Controller */,
+				7157C82824B3CA6C00CB80E4 /* Home View Controller */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7157C82124B3C7EA00CB80E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7157C82824B3CA6C00CB80E4 /* Home View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7157C82524B3CA6800CB80E4 /* HomeViewController.h */,
+				7157C82624B3CA6800CB80E4 /* HomeViewController.m */,
+			);
+			path = "Home View Controller";
+			sourceTree = "<group>";
+		};
+		7157C82924B3CA7900CB80E4 /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7157C82224B3C80000CB80E4 /* LoginViewController.h */,
+				7157C82324B3C80000CB80E4 /* LoginViewController.m */,
+			);
+			path = "Login View Controller";
+			sourceTree = "<group>";
+		};
 		7181B8B724B37DE400500479 = {
 			isa = PBXGroup;
 			children = (
@@ -134,12 +171,12 @@
 		7181B8C224B37DE400500479 /* snappergram */ = {
 			isa = PBXGroup;
 			children = (
+				7157C82124B3C7EA00CB80E4 /* Views */,
+				7157C82024B3C7E400CB80E4 /* View Controllers */,
 				7181B8C324B37DE400500479 /* AppDelegate.h */,
 				7181B8C424B37DE400500479 /* AppDelegate.m */,
 				7181B8C624B37DE400500479 /* SceneDelegate.h */,
 				7181B8C724B37DE400500479 /* SceneDelegate.m */,
-				7181B8C924B37DE400500479 /* ViewController.h */,
-				7181B8CA24B37DE400500479 /* ViewController.m */,
 				7181B8CC24B37DE400500479 /* Main.storyboard */,
 				7181B8CF24B37DE500500479 /* Assets.xcassets */,
 				7181B8D124B37DE500500479 /* LaunchScreen.storyboard */,
@@ -415,9 +452,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */,
 				7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */,
-				7181B8CB24B37DE400500479 /* ViewController.m in Sources */,
 				7181B8D624B37DE500500479 /* main.m in Sources */,
+				7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */,
 				7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
