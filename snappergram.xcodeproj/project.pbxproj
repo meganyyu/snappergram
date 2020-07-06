@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */; };
-		7181B8C524B37DE400500479 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
+		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C724B37DE400500479 /* SceneDelegate.m */; };
 		7181B8CB24B37DE400500479 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8CA24B37DE400500479 /* ViewController.m */; };
 		7181B8CE24B37DE400500479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7181B8CC24B37DE400500479 /* Main.storyboard */; };
@@ -106,7 +106,6 @@
 				7263F337682EEFDB546184BC /* Pods-snappergramTests.debug.xcconfig */,
 				182296E8583E4ACB329F481F /* Pods-snappergramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -416,8 +415,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */,
 				7181B8CB24B37DE400500479 /* ViewController.m in Sources */,
-				7181B8C524B37DE400500479 /* AppDelegate.m in Sources */,
 				7181B8D624B37DE500500479 /* main.m in Sources */,
 				7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */,
 			);
