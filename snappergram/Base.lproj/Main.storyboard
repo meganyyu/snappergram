@@ -80,6 +80,11 @@
                                 <action selector="didTapLogout:" destination="Vaz-ne-4LS" id="l4b-8Y-yC1"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Camera" image="insta_camera_btn" id="U1C-g9-nsZ">
+                            <connections>
+                                <segue destination="wPz-V0-9td" kind="presentation" identifier="createPostSegue" id="qiX-BQ-P4W"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43b-R3-F0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,5 +109,79 @@
             </objects>
             <point key="canvasLocation" x="1089.8550724637682" y="93.75"/>
         </scene>
+        <!--Create Post View Controller-->
+        <scene sceneID="Zx3-Nl-jH8">
+            <objects>
+                <viewController storyboardIdentifier="CreatePostViewController" id="eEy-Db-N9t" customClass="CreatePostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EmH-Hz-Ysu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="eSz-og-JL3">
+                                <rect key="frame" x="20" y="112" width="110" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0cU-LT-9WK" appends="YES" id="vyZ-io-mHR"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="Write a caption..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="htO-sZ-iOT">
+                                <rect key="frame" x="138" y="112" width="256" height="110"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="XtY-la-e3v"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tj6-Uh-Ger">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="bbK-7C-tSo">
+                            <connections>
+                                <action selector="didTapCancel:" destination="eEy-Db-N9t" id="r5V-Y3-WwD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="UU0-94-Qcw">
+                            <connections>
+                                <action selector="didTapShare:" destination="eEy-Db-N9t" id="gUs-YA-osv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionField" destination="htO-sZ-iOT" id="cUM-w8-Pdp"/>
+                        <outlet property="imageToPostView" destination="eSz-og-JL3" id="TDc-9Q-pg6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phe-lB-oR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0cU-LT-9WK">
+                    <connections>
+                        <action selector="onImageTap:" destination="eEy-Db-N9t" id="I23-yK-L4A"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3992.753623188406" y="93.75"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h4v-t4-Dhy">
+            <objects>
+                <navigationController storyboardIdentifier="CreatePostNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="wPz-V0-9td" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2O8-ri-aSA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eEy-Db-N9t" kind="relationship" relationship="rootViewController" id="BDm-go-bKI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RL2-VH-xFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3083" y="94"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="image_placeholder" width="375" height="375"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
