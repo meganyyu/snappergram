@@ -20,6 +20,7 @@
 		7181B8D624B37DE500500479 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8D524B37DE500500479 /* main.m */; };
 		7181B8E024B37DE500500479 /* snappergramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8DF24B37DE500500479 /* snappergramTests.m */; };
 		7181B8EB24B37DE500500479 /* snappergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8EA24B37DE500500479 /* snappergramUITests.m */; };
+		719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ADE6D24B50EC90081907E /* PostCollectionCell.m */; };
 		A10A7AB2AED9955F06459AFE /* Pods_snappergramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */; };
 		B4CA67F40F14501295F69A2A /* Pods_snappergram_snappergramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,8 @@
 		7181B8E624B37DE500500479 /* snappergramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = snappergramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7181B8EA24B37DE500500479 /* snappergramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = snappergramUITests.m; sourceTree = "<group>"; };
 		7181B8EC24B37DE500500479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		719ADE6C24B50EC90081907E /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
+		719ADE6D24B50EC90081907E /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
 		7263F337682EEFDB546184BC /* Pods-snappergramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergramTests.debug.xcconfig"; path = "Target Support Files/Pods-snappergramTests/Pods-snappergramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB46F6A5BDDAA15C22699D7 /* Pods-snappergram-snappergramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.debug.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +134,8 @@
 		7157C82124B3C7EA00CB80E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				719ADE6C24B50EC90081907E /* PostCollectionCell.h */,
+				719ADE6D24B50EC90081907E /* PostCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */,
+				719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */,
 				7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */,
 				7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */,
 				7181B8D624B37DE500500479 /* main.m in Sources */,

@@ -7,6 +7,7 @@ target 'snappergram' do
 
   # Pods for snappergram
   pod 'Parse'
+  pod 'Parse/UI'
 
   target 'snappergramTests' do
     inherit! :search_paths

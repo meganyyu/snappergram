@@ -13,8 +13,8 @@
 @interface CreatePostViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property UIImagePickerController *imagePickerVC;
-@property (weak, nonatomic) IBOutlet UIImageView *imageToPostView;
-@property (weak, nonatomic) IBOutlet UITextField *captionField;
+@property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
+@property (weak, nonatomic) IBOutlet UITextView *captionTextView;
 
 @end
 
@@ -42,7 +42,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
-    [self.imageToPostView setImage:editedImage];
+    [self.photoImageView setImage:editedImage];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -72,9 +72,13 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
-    UIImage *resizedImage = [self resizeImage:self.imageToPostView.image withSize:CGSizeMake(50, 50)];
+//    CGFloat const itemWidth = self.imageToPostView.frame.size.width;
+//    CGFloat const itemHeight = self.imageToPostView.frame.size.height;
+//    CGSizeMake(itemWidth, itemHeight);
     
-    [Post postUserImage:resizedImage withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    UIImage *resizedImage = [self resizeImage:self.photoImageView.image withSize:CGSizeMake(10, 10)];
+    
+    [Post postUserImage:resizedImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Successfully created post!");
             [self dismissViewControllerAnimated:true completion:nil];
