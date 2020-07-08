@@ -131,11 +131,55 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Ikk-NL-5V9" id="jhX-21-tRq"/>
+                        <segue destination="JAI-Xh-Pbo" kind="presentation" identifier="postDetailsSegue" id="Ua1-rD-rqT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43b-R3-F0B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001.449275362319" y="93.75"/>
+        </scene>
+        <!--Post Details View Controller-->
+        <scene sceneID="NAg-Il-npd">
+            <objects>
+                <viewController storyboardIdentifier="PostDetailsViewController" id="aPd-zt-OaA" customClass="PostDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rP2-ev-fuW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Here's a sample caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLJ-zQ-7Rm">
+                                <rect key="frame" x="20" y="593" width="290" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3:44 PM July 7, 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-1I-hgt">
+                                <rect key="frame" x="20" y="551" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="GLK-wk-clw" customClass="PFImageView">
+                                <rect key="frame" x="20" y="153" width="374" height="374"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VmP-D1-Tgg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w9x-ps-PYT">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="yGQ-b1-q1d"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionLabel" destination="OLJ-zQ-7Rm" id="Bz3-od-pvE"/>
+                        <outlet property="photoImageView" destination="GLK-wk-clw" id="gas-3j-RRm"/>
+                        <outlet property="timestampLabel" destination="vVO-1I-hgt" id="rWq-x5-3Sk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ixA-K4-3qa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889.8550724637685" y="902.00892857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="heH-Ki-Xb0">
@@ -226,6 +270,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RL2-VH-xFb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3083" y="94"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mi4-mj-Qcl">
+            <objects>
+                <navigationController storyboardIdentifier="PostDetailsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="JAI-Xh-Pbo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8XL-EO-Hff">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aPd-zt-OaA" kind="relationship" relationship="rootViewController" id="nyX-SF-NYl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSJ-sK-Ecn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979.7101449275365" y="901.33928571428567"/>
         </scene>
     </scenes>
     <resources>

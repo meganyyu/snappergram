@@ -23,7 +23,9 @@
     return @"Post";
 }
 
-+ (void)postUserImage:(UIImage * _Nullable)image withCaption:(NSString *_Nullable)caption withCompletion:(PFBooleanResultBlock _Nullable)completion {
++ (void)postUserImage:(UIImage * _Nullable)image
+          withCaption:(NSString *_Nullable)caption
+       withCompletion:(PFBooleanResultBlock _Nullable)completion {
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser]; // get current user and assign it to "author" field
@@ -49,6 +51,17 @@
     }
     
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
+}
+
+- (NSString *)getCreatedAtString {
+    NSDate *date = self.createdAt;
+    
+    NSDateFormatter *const formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MMM d HH:mm:ss y";
+    formatter.dateStyle = NSDateFormatterMediumStyle;
+    formatter.timeStyle = NSDateFormatterShortStyle;
+
+    return [formatter stringFromDate:date];
 }
 
 @end

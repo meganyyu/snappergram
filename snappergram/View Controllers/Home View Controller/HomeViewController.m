@@ -12,11 +12,15 @@
 #import "LoginViewController.h"
 #import "Post.h"
 #import "PostCollectionCell.h"
+#import "PostDetailsViewController.h"
 
 static NSString *const loginViewControllerID = @"LoginViewController";
 static NSString *const mainStoryboardID = @"Main";
+static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 
-@interface HomeViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+#pragma mark - Interface
+
+@interface HomeViewController () <PostCollectionCellDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) UICollectionViewFlowLayout *flowLayout;
@@ -25,7 +29,11 @@ static NSString *const mainStoryboardID = @"Main";
 
 @end
 
+#pragma mark - Implementation
+
 @implementation HomeViewController
+
+#pragma mark - Setup
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,6 +73,8 @@ static NSString *const mainStoryboardID = @"Main";
     }];
 }
 
+#pragma mark - User Interaction
+
 - (IBAction)didTapLogout:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     
@@ -78,7 +88,7 @@ static NSString *const mainStoryboardID = @"Main";
     }];
 }
 
-// MARK: UICollectionViewDataSource methods
+#pragma mark - UICollectionViewDataSource methods
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.postArray.count;
@@ -87,10 +97,11 @@ static NSString *const mainStoryboardID = @"Main";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
     cell.post = self.postArray[indexPath.item];
+    cell.delegate = self;
     return cell;
 }
 
-// MARK: UICollectionViewDelegateFlowLayout methods
+#pragma mark - UICollectionViewDelegateFlowLayout methods
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat itemWidth = self.collectionView.frame.size.width;
@@ -98,14 +109,27 @@ static NSString *const mainStoryboardID = @"Main";
     return CGSizeMake(itemWidth, itemHeight);
 }
 
-/*
+#pragma mark - PostCollectionCellDelegate methods
+
+- (void)postCollectionCell:(PostCollectionCell *)postCollectionCell didTap:(Post *)post {
+    NSLog(@"Reached postCollectionCell:didTap: method");
+    [self performSegueWithIdentifier:kPostDetailsSegueID sender:post];
+}
+
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:kPostDetailsSegueID]) {
+        Post *tappedPost = sender;
+        
+        UINavigationController *navigationController = [segue destinationViewController];
+        PostDetailsViewController *postDetailsViewController = (PostDetailsViewController *)navigationController.topViewController;
+        postDetailsViewController.post = tappedPost;
+        
+        NSLog(@"HomeViewController preparing for segue!");
+    }
 }
-*/
+
 
 @end

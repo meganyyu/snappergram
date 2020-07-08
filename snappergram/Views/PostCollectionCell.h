@@ -12,11 +12,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol PostCollectionCellDelegate;
+
 @interface PostCollectionCell : UICollectionViewCell
 
+@property (nonatomic, weak) id<PostCollectionCellDelegate> delegate;
 @property (nonatomic, strong) Post *post;
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+
+@end
+
+@protocol PostCollectionCellDelegate
+
+- (void)postCollectionCell:(PostCollectionCell *)postCollectionCell didTap:(Post *)post;
 
 @end
 

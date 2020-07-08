@@ -23,7 +23,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *commentCount;
 
 /** Creates a new Post object, initializes its properties, and then saves it to Parse asynchronously. Then carries out specified completion block, reporting whether it was a success or not. */
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion;
++ (void) postUserImage: ( UIImage * _Nullable )image
+           withCaption: ( NSString * _Nullable )caption
+        withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
+- (NSString *)getCreatedAtString;
 
 @end
 

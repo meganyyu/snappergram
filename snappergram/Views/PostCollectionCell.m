@@ -12,6 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    UITapGestureRecognizer *const postTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapPostDetails:)];
+    [self.photoImageView addGestureRecognizer:postTapGestureRecognizer];
+    [self.photoImageView setUserInteractionEnabled:YES];
 }
 
 - (void)setPost:(Post *)post {
@@ -21,6 +25,11 @@
     [self.photoImageView loadInBackground];
     
     [self.captionLabel setText:post.caption];
+}
+
+- (void) didTapPostDetails:(UITapGestureRecognizer *)sender{
+    [self.delegate postCollectionCell:self didTap:self.post];
+    NSLog(@"PostCollectionCell processed a tap! Tapped on post with caption: %@", self.post.caption);
 }
 
 @end
