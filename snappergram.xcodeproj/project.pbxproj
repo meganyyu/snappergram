@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */; };
+		710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */; };
 		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82324B3C80000CB80E4 /* LoginViewController.m */; };
 		7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
@@ -49,6 +50,8 @@
 		3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_snappergram_snappergramUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.release.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.release.xcconfig"; sourceTree = "<group>"; };
+		710E8DFA24B679FA00C430F9 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		7157C82224B3C80000CB80E4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7157C82324B3C80000CB80E4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7157C82524B3CA6800CB80E4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -140,6 +143,8 @@
 			children = (
 				719ADE6C24B50EC90081907E /* PostCollectionCell.h */,
 				719ADE6D24B50EC90081907E /* PostCollectionCell.m */,
+				710E8DFA24B679FA00C430F9 /* InfiniteScrollActivityView.h */,
+				710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -498,6 +503,7 @@
 			files = (
 				7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */,
 				719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */,
+				710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */,
 				7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */,
 				7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */,
 				7181B8D624B37DE500500479 /* main.m in Sources */,
