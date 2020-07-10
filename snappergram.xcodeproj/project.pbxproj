@@ -11,6 +11,7 @@
 		710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */; };
 		710E8E0024B6829100C430F9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8DFF24B6829100C430F9 /* ProfileViewController.m */; };
 		710E8E0924B8FFFD00C430F9 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8E0624B8FDC800C430F9 /* MainTabBarController.m */; };
+		710E8E0F24B9296100C430F9 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8E0E24B9296100C430F9 /* NavigationManager.m */; };
 		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82324B3C80000CB80E4 /* LoginViewController.m */; };
 		7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
@@ -58,6 +59,8 @@
 		710E8DFF24B6829100C430F9 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		710E8E0524B8FDC800C430F9 /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		710E8E0624B8FDC800C430F9 /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		710E8E0D24B9296100C430F9 /* NavigationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationManager.h; sourceTree = "<group>"; };
+		710E8E0E24B9296100C430F9 /* NavigationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationManager.m; sourceTree = "<group>"; };
 		7157C82224B3C80000CB80E4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7157C82324B3C80000CB80E4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7157C82524B3CA6800CB80E4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -169,6 +172,15 @@
 			path = "Infinite Scroll Activity View";
 			sourceTree = "<group>";
 		};
+		710E8E0C24B928FA00C430F9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				710E8E0D24B9296100C430F9 /* NavigationManager.h */,
+				710E8E0E24B9296100C430F9 /* NavigationManager.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		7157C82024B3C7E400CB80E4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +264,7 @@
 		7181B8C224B37DE400500479 /* snappergram */ = {
 			isa = PBXGroup;
 			children = (
+				710E8E0C24B928FA00C430F9 /* Navigation */,
 				71767CA624B3E0FA00B5AA8E /* Model */,
 				7157C82124B3C7EA00CB80E4 /* Views */,
 				7157C82024B3C7E400CB80E4 /* View Controllers */,
@@ -544,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				710E8E0924B8FFFD00C430F9 /* MainTabBarController.m in Sources */,
+				710E8E0F24B9296100C430F9 /* NavigationManager.m in Sources */,
 				7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */,
 				719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */,
 				710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */,

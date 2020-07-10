@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "SceneDelegate.h"
 #import "HomeViewController.h"
+#import "NavigationManager.h"
 #import "ProfileViewController.h"
 
 #pragma mark - Interface
@@ -60,7 +61,7 @@
             } else {
                 NSLog(@"User registered successfully");
                 
-                [self authenticatedTransition];
+                [self transitionToLoggedInScreen];
             }
         }];
     }
@@ -79,7 +80,7 @@
         } else {
             NSLog(@"User logged in successfully");
             
-            [self authenticatedTransition];
+            [self transitionToLoggedInScreen];
         }
     }];
 }
@@ -101,9 +102,9 @@
                      completion:nil];
 }
 
-- (void)authenticatedTransition {
+- (void)transitionToLoggedInScreen {
     SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    [sceneDelegate presentLoggedInScreen];
+    [NavigationManager presentLoggedInScreenWithSceneDelegate:sceneDelegate];
 }
 
 @end

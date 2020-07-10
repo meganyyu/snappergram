@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 
+- (void)refreshPost;
+
 @end
 
 @protocol PostCollectionCellDelegate

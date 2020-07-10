@@ -127,6 +127,7 @@ InfiniteScrollActivityView *loadingMoreView;
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
     cell.post = _postArray[indexPath.item];
     cell.delegate = self;
+    [cell refreshPost];
     return cell;
 }
 

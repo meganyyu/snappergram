@@ -17,15 +17,15 @@
                                                                                                     action:@selector(didTapPostDetails:)];
     [_photoImageView addGestureRecognizer:postTapGestureRecognizer];
     [_photoImageView setUserInteractionEnabled:YES];
+    
+    [self refreshPost];
 }
 
-- (void)setPost:(Post *)post {
-    _post = post;
-    
-    _photoImageView.file = post.image;
+- (void)refreshPost {
+    _photoImageView.file = _post.image;
     [_photoImageView loadInBackground];
     
-    [_captionLabel setText:post.caption];
+    [_captionLabel setText:_post.caption];
 }
 
 - (void) didTapPostDetails:(UITapGestureRecognizer *)sender{
