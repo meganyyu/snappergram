@@ -16,8 +16,12 @@
 #import "PostDetailsViewController.h"
 #import "SceneDelegate.h"
 
-static NSString *const loginViewControllerID = @"LoginViewController";
-static NSString *const mainStoryboardID = @"Main";
+#pragma mark - Constants
+
+static NSString *const kAuthorKey = @"author";
+static NSString *const kCreatedAtKey = @"createdAt";
+static NSString *const kLoginViewControllerID = @"LoginViewController";
+static NSString *const kMainStoryboardID = @"Main";
 static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 
 #pragma mark - Interface
@@ -37,45 +41,47 @@ static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 @implementation HomeViewController
 
 bool isMoreDataLoading = false;
-InfiniteScrollActivityView* loadingMoreView;
+InfiniteScrollActivityView *loadingMoreView;
 
 #pragma mark - Setup
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
     
-    self.flowLayout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
-    self.flowLayout.minimumInteritemSpacing = 0;
-    self.flowLayout.minimumLineSpacing = 0;
+    _flowLayout = (UICollectionViewFlowLayout *) _collectionView.collectionViewLayout;
+    _flowLayout.minimumInteritemSpacing = 0;
+    _flowLayout.minimumLineSpacing = 0;
     
-    self.postQueryLimit = 20;
+    _postQueryLimit = 20;
     [self loadPosts];
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(loadPosts) forControlEvents:UIControlEventValueChanged];
-    [self.collectionView insertSubview:self.refreshControl atIndex:0];
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(loadPosts)
+              forControlEvents:UIControlEventValueChanged];
+    [_collectionView insertSubview:_refreshControl
+                           atIndex:0];
     
     // Set up Infinite Scroll loading indicator
-    CGRect frame = CGRectMake(0, self.collectionView.contentSize.height, self.collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    CGRect frame = CGRectMake(0, _collectionView.contentSize.height, _collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
     loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
     loadingMoreView.hidden = true;
-    [self.collectionView addSubview:loadingMoreView];
+    [_collectionView addSubview:loadingMoreView];
     
-    UIEdgeInsets insets = self.collectionView.contentInset;
+    UIEdgeInsets insets = _collectionView.contentInset;
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
-    self.collectionView.contentInset = insets;
+    _collectionView.contentInset = insets;
 }
 
 - (void)loadPosts {
     PFQuery *postQuery = [Post query];
-    [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
+    [postQuery orderByDescending:kCreatedAtKey];
+    [postQuery includeKey:kAuthorKey];
     postQuery.limit = _postQueryLimit;
     postQuery.cachePolicy = kPFCachePolicyNetworkElseCache;
-
+    
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
@@ -99,8 +105,8 @@ InfiniteScrollActivityView* loadingMoreView;
 - (IBAction)didTapLogout:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:mainStoryboardID bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:loginViewControllerID];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboardID bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:kLoginViewControllerID];
     sceneDelegate.window.rootViewController = loginViewController;
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
@@ -111,59 +117,66 @@ InfiniteScrollActivityView* loadingMoreView;
 
 #pragma mark - UICollectionViewDataSource methods
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.postArray.count;
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
+    return _postArray.count;
 }
 
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                           cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    cell.post = self.postArray[indexPath.item];
+    cell.post = _postArray[indexPath.item];
     cell.delegate = self;
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout methods
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat itemWidth = self.collectionView.frame.size.width;
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat itemWidth = _collectionView.frame.size.width;
     CGFloat itemHeight = itemWidth * 1.25;
     return CGSizeMake(itemWidth, itemHeight);
 }
 
 #pragma mark - PostCollectionCellDelegate methods
 
-- (void)postCollectionCell:(PostCollectionCell *)postCollectionCell didTap:(Post *)post {
+- (void)postCollectionCell:(PostCollectionCell *)postCollectionCell
+                    didTap:(Post *)post {
     NSLog(@"Reached postCollectionCell:didTap: method");
-    [self performSegueWithIdentifier:kPostDetailsSegueID sender:post];
+    [self performSegueWithIdentifier:kPostDetailsSegueID
+                              sender:post];
 }
 
 #pragma mark - UIScrollViewDelegate methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(!isMoreDataLoading){
-       // Calculate the position of one screen length before the bottom of the results
-       int scrollViewContentHeight = self.collectionView.contentSize.height;
-       int scrollOffsetThreshold = scrollViewContentHeight - self.collectionView.bounds.size.height;
-       
-       // When the user has scrolled past the threshold, start requesting
-       if(scrollView.contentOffset.y > scrollOffsetThreshold && self.collectionView.isDragging) {
-           isMoreDataLoading = true;
-           
-           // Update position of loadingMoreView, and start loading indicator
-           CGRect frame = CGRectMake(0, self.collectionView.contentSize.height, self.collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
-           loadingMoreView.frame = frame;
-           [loadingMoreView startAnimating];
-           
-           // ... Code to load more results ...
-           NSLog(@"Letting you know that we're pulling up more data! Post query limit: %d", _postQueryLimit);
-           [self loadPosts];
-       }
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = _collectionView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - _collectionView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && _collectionView.isDragging) {
+            isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, _collectionView.contentSize.height, _collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            // ... Code to load more results ...
+            NSLog(@"Letting you know that we're pulling up more data! Post query limit: %d", _postQueryLimit);
+            [self loadPosts];
+        }
     }
 }
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender {
     if ([[segue identifier] isEqualToString:kPostDetailsSegueID]) {
         Post *tappedPost = sender;
         

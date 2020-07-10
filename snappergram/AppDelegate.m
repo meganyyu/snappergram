@@ -32,7 +32,6 @@ static NSString *const kServerURLString = @"http://snappergram.herokuapp.com/par
     return YES;
 }
 
-
 #pragma mark - UISceneSession lifecycle
 
 

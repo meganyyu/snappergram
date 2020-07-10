@@ -7,22 +7,30 @@
 //
 
 #import "LoginViewController.h"
+
 #import <Parse/Parse.h>
+#import "SceneDelegate.h"
+#import "HomeViewController.h"
+#import "ProfileViewController.h"
+
+#pragma mark - Interface
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
-
 @end
+
+#pragma mark - Implementation
 
 @implementation LoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
+
+#pragma mark - User actions
 
 - (IBAction)didTapRegister:(id)sender {
     [self registerUser];
@@ -32,65 +40,70 @@
     [self loginUser];
 }
 
+#pragma mark - Authentication
+
 - (void)registerUser {
     PFUser *newUser = [PFUser user];
     
-    newUser.username = self.usernameField.text;
-    newUser.password = self.passwordField.text;
+    newUser.username = _usernameField.text;
+    newUser.password = _passwordField.text;
     
-    if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]) {
-        [self showAlert:@"Empty fields" withMessage:@"Username or password field empty" completion:nil];
+    if ([_usernameField.text isEqual:@""] || [_passwordField.text isEqual:@""]) {
+        [self showAlert:@"Empty fields"
+            withMessage:@"Username or password field empty" completion:nil];
     } else {
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
             if (error != nil) {
                 NSLog(@"User registration failed: %@", error.localizedDescription);
-                [self showAlert:@"Error" withMessage:error.localizedDescription completion:nil];
+                [self showAlert:@"Error"
+                    withMessage:error.localizedDescription completion:nil];
             } else {
                 NSLog(@"User registered successfully");
                 
-                [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+                [self authenticatedTransition];
             }
         }];
     }
 }
 
 - (void)loginUser {
-    NSString *username = self.usernameField.text;
-    NSString *password = self.passwordField.text;
+    NSString *username = _usernameField.text;
+    NSString *password = _passwordField.text;
     
-    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+    [PFUser logInWithUsernameInBackground:username
+                                 password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
-            [self showAlert:@"User login failed" withMessage:error.localizedDescription completion:nil];
+            [self showAlert:@"User login failed"
+                withMessage:error.localizedDescription completion:nil];
         } else {
             NSLog(@"User logged in successfully");
             
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            [self authenticatedTransition];
         }
     }];
 }
 
-- (void)showAlert:(NSString *)title withMessage:(NSString *)message completion:(void(^)(void))completion{
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
-           message:message
-    preferredStyle:(UIAlertControllerStyleAlert)];
+#pragma mark - UI Changes
 
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
+- (void)showAlert:(NSString *)title withMessage:(NSString *)message completion:(void(^)(void))completion{
+    UIAlertController *const alert = [UIAlertController alertControllerWithTitle:title
+                                                                         message:message
+                                                                  preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *const okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:nil];
     [alert addAction:okAction];
     
-    [self presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert
+                       animated:YES
+                     completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)authenticatedTransition {
+    SceneDelegate *const sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    [sceneDelegate presentLoggedInScreen];
 }
-*/
 
 @end

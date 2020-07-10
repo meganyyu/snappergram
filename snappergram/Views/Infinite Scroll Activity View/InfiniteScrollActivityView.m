@@ -10,8 +10,8 @@
 
 @implementation InfiniteScrollActivityView
 
-UIActivityIndicatorView* activityIndicatorView;
-static CGFloat _defaultHeight = 60.0;
+UIActivityIndicatorView *activityIndicatorView;
+static const CGFloat _defaultHeight = 60.0;
 
 + (CGFloat)defaultHeight{
     return _defaultHeight;

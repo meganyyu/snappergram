@@ -1,5 +1,5 @@
 //
-//  InfiniteScrollActivityView.h
+//  ProfileViewController.h
 //  snappergram
 //
 //  Created by meganyu on 7/8/20.
@@ -10,13 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InfiniteScrollActivityView : UIView
+@interface ProfileViewController : UIViewController
 
-@property (class, nonatomic, readonly) CGFloat defaultHeight;
-
-- (void)startAnimating;
-- (void)stopAnimating;
-
+// TODO: store user?
 
 @end
 

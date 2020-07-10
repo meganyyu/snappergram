@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23C706774DBA6BE5256099ED /* Pods_snappergram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F90AC224B49D5F068A5B7B4 /* Pods_snappergram.framework */; };
 		710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */; };
+		710E8E0024B6829100C430F9 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8DFF24B6829100C430F9 /* ProfileViewController.m */; };
+		710E8E0924B8FFFD00C430F9 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8E0624B8FDC800C430F9 /* MainTabBarController.m */; };
 		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82324B3C80000CB80E4 /* LoginViewController.m */; };
 		7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
@@ -52,6 +54,10 @@
 		62133D43965AB1CAE9583860 /* Pods-snappergram-snappergramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-snappergram-snappergramUITests.release.xcconfig"; path = "Target Support Files/Pods-snappergram-snappergramUITests/Pods-snappergram-snappergramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		710E8DFA24B679FA00C430F9 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
 		710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
+		710E8DFE24B6829100C430F9 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		710E8DFF24B6829100C430F9 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		710E8E0524B8FDC800C430F9 /* MainTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		710E8E0624B8FDC800C430F9 /* MainTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		7157C82224B3C80000CB80E4 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7157C82324B3C80000CB80E4 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7157C82524B3CA6800CB80E4 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
@@ -127,13 +133,51 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		710E8DFD24B6827C00C430F9 /* Profile View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				710E8DFE24B6829100C430F9 /* ProfileViewController.h */,
+				710E8DFF24B6829100C430F9 /* ProfileViewController.m */,
+			);
+			path = "Profile View Controller";
+			sourceTree = "<group>";
+		};
+		710E8E0824B8FDCD00C430F9 /* Main Tab Bar Controller */ = {
+			isa = PBXGroup;
+			children = (
+				710E8E0524B8FDC800C430F9 /* MainTabBarController.h */,
+				710E8E0624B8FDC800C430F9 /* MainTabBarController.m */,
+			);
+			path = "Main Tab Bar Controller";
+			sourceTree = "<group>";
+		};
+		710E8E0A24B924A900C430F9 /* Post Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				719ADE6C24B50EC90081907E /* PostCollectionCell.h */,
+				719ADE6D24B50EC90081907E /* PostCollectionCell.m */,
+			);
+			path = "Post Collection Cell";
+			sourceTree = "<group>";
+		};
+		710E8E0B24B924B100C430F9 /* Infinite Scroll Activity View */ = {
+			isa = PBXGroup;
+			children = (
+				710E8DFA24B679FA00C430F9 /* InfiniteScrollActivityView.h */,
+				710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */,
+			);
+			path = "Infinite Scroll Activity View";
+			sourceTree = "<group>";
+		};
 		7157C82024B3C7E400CB80E4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				719ADE6F24B532D80081907E /* Post Details View Controller */,
-				7161070F24B3D289003A178A /* Create Post View Controller */,
+				710E8E0824B8FDCD00C430F9 /* Main Tab Bar Controller */,
 				7157C82924B3CA7900CB80E4 /* Login View Controller */,
 				7157C82824B3CA6C00CB80E4 /* Home View Controller */,
+				719ADE6F24B532D80081907E /* Post Details View Controller */,
+				710E8DFD24B6827C00C430F9 /* Profile View Controller */,
+				7161070F24B3D289003A178A /* Create Post View Controller */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -141,10 +185,8 @@
 		7157C82124B3C7EA00CB80E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				719ADE6C24B50EC90081907E /* PostCollectionCell.h */,
-				719ADE6D24B50EC90081907E /* PostCollectionCell.m */,
-				710E8DFA24B679FA00C430F9 /* InfiniteScrollActivityView.h */,
-				710E8DFB24B679FA00C430F9 /* InfiniteScrollActivityView.m */,
+				710E8E0A24B924A900C430F9 /* Post Collection Cell */,
+				710E8E0B24B924B100C430F9 /* Infinite Scroll Activity View */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -501,6 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710E8E0924B8FFFD00C430F9 /* MainTabBarController.m in Sources */,
 				7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */,
 				719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */,
 				710E8DFC24B679FA00C430F9 /* InfiniteScrollActivityView.m in Sources */,
@@ -509,6 +552,7 @@
 				7181B8D624B37DE500500479 /* main.m in Sources */,
 				7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */,
 				7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */,
+				710E8E0024B6829100C430F9 /* ProfileViewController.m in Sources */,
 				71767CA924B3E12A00B5AA8E /* Post.m in Sources */,
 				719ADE7224B532F40081907E /* PostDetailsViewController.m in Sources */,
 			);
