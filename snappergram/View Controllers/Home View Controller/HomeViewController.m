@@ -55,7 +55,7 @@ InfiniteScrollActivityView *loadingMoreView;
     _flowLayout.minimumInteritemSpacing = 0;
     _flowLayout.minimumLineSpacing = 0;
     
-    _postQueryLimit = 20;
+    _postQueryLimit = 10;
     [self loadPosts];
     
     _refreshControl = [[UIRefreshControl alloc] init];
@@ -90,6 +90,7 @@ InfiniteScrollActivityView *loadingMoreView;
             self.postQueryLimit = (int) posts.count + 5;
             
             self.postArray = posts;
+            
             [self.collectionView reloadData];
         }
         else {
@@ -126,6 +127,7 @@ InfiniteScrollActivityView *loadingMoreView;
                            cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
     cell.post = _postArray[indexPath.item];
+    //NSLog(@"Caption for this post: %@", cell.post.caption);
     cell.delegate = self;
     [cell refreshPost];
     return cell;

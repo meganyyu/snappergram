@@ -10,13 +10,13 @@
 
 @implementation Post
 
-@synthesize postID;
-@synthesize userID;
-@synthesize author;
-@synthesize caption;
-@synthesize image;
-@synthesize likeCount;
-@synthesize commentCount;
+@dynamic postID;
+@dynamic userID;
+@dynamic author;
+@dynamic caption;
+@dynamic image;
+@dynamic likeCount;
+@dynamic commentCount;
 
 // implementing as part of PFSubclassing protocol
 + (NSString *)parseClassName {

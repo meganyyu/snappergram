@@ -35,8 +35,6 @@ static NSString *const kFeedTabIcon = @"feed_tab";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //UINavigationBar.appearance.prefersLargeTitles = YES;
-    
     UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:kMainStoryboardID bundle:nil];
     UIViewController *const homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:kHomeNavigationControllerID];
     UIViewController *const profileNavigationController = [storyboard instantiateViewControllerWithIdentifier:kProfileNavigationControllerID];
@@ -56,6 +54,7 @@ static NSString *const kFeedTabIcon = @"feed_tab";
     [profileTabItem setImage:profileTabIcon];
     profileTabItem.title = @"Profile";
     
+    NSLog(@"Reached end of MainTabBarController viewDidLoad");
 }
 
 @end
