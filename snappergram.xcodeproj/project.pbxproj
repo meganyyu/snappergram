@@ -14,7 +14,6 @@
 		710E8E0F24B9296100C430F9 /* NavigationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 710E8E0E24B9296100C430F9 /* NavigationManager.m */; };
 		7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C424B37DE400500479 /* AppDelegate.m */; };
 		7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82324B3C80000CB80E4 /* LoginViewController.m */; };
-		7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
 		7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7161071124B3D2AB003A178A /* CreatePostViewController.m */; };
 		71767CA924B3E12A00B5AA8E /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 71767CA824B3E12A00B5AA8E /* Post.m */; };
 		7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8C724B37DE400500479 /* SceneDelegate.m */; };
@@ -26,6 +25,7 @@
 		7181B8EB24B37DE500500479 /* snappergramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7181B8EA24B37DE500500479 /* snappergramUITests.m */; };
 		719ADE6E24B50EC90081907E /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ADE6D24B50EC90081907E /* PostCollectionCell.m */; };
 		719ADE7224B532F40081907E /* PostDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719ADE7124B532F40081907E /* PostDetailsViewController.m */; };
+		71EFDAEB24B973E60075E7B8 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7157C82624B3CA6800CB80E4 /* HomeViewController.m */; };
 		A10A7AB2AED9955F06459AFE /* Pods_snappergramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 729D76DC0C5BFC4BE58711F9 /* Pods_snappergramTests.framework */; };
 		B4CA67F40F14501295F69A2A /* Pods_snappergram_snappergramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487C3BF301A53659BA0C6F4A /* Pods_snappergram_snappergramUITests.framework */; };
 /* End PBXBuildFile section */
@@ -556,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71EFDAEB24B973E60075E7B8 /* HomeViewController.m in Sources */,
 				710E8E0924B8FFFD00C430F9 /* MainTabBarController.m in Sources */,
 				710E8E0F24B9296100C430F9 /* NavigationManager.m in Sources */,
 				7161071224B3D2AB003A178A /* CreatePostViewController.m in Sources */,
@@ -564,7 +565,6 @@
 				7157C82424B3C80000CB80E4 /* LoginViewController.m in Sources */,
 				7157C81F24B3C4BA00CB80E4 /* AppDelegate.m in Sources */,
 				7181B8D624B37DE500500479 /* main.m in Sources */,
-				7157C82724B3CA6800CB80E4 /* HomeViewController.m in Sources */,
 				7181B8C824B37DE400500479 /* SceneDelegate.m in Sources */,
 				710E8E0024B6829100C430F9 /* ProfileViewController.m in Sources */,
 				71767CA924B3E12A00B5AA8E /* Post.m in Sources */,

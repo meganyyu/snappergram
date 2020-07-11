@@ -10,6 +10,7 @@
 
 #import "InfiniteScrollActivityView.h"
 #import "LoginViewController.h"
+#import "NavigationManager.h"
 #import <Parse/Parse.h>
 #import "Post.h"
 #import "PostCollectionCell.h"
@@ -20,8 +21,7 @@
 
 static NSString *const kAuthorKey = @"author";
 static NSString *const kCreatedAtKey = @"createdAt";
-static NSString *const kLoginViewControllerID = @"LoginViewController";
-static NSString *const kMainStoryboardID = @"Main";
+static NSString *const kPostCollectionCellID = @"PostCollectionCell";
 static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 
 #pragma mark - Interface
@@ -31,17 +31,16 @@ static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) UICollectionViewFlowLayout *flowLayout;
 @property (strong, nonatomic) NSArray *postArray;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property int postQueryLimit;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property bool isMoreDataLoading;
+@property (nonatomic, strong) InfiniteScrollActivityView *loadingMoreView;
 
 @end
 
 #pragma mark - Implementation
 
 @implementation HomeViewController
-
-bool isMoreDataLoading = false;
-InfiniteScrollActivityView *loadingMoreView;
 
 #pragma mark - Setup
 
@@ -56,6 +55,7 @@ InfiniteScrollActivityView *loadingMoreView;
     _flowLayout.minimumLineSpacing = 0;
     
     _postQueryLimit = 10;
+    _isMoreDataLoading = false;
     [self loadPosts];
     
     _refreshControl = [[UIRefreshControl alloc] init];
@@ -66,9 +66,9 @@ InfiniteScrollActivityView *loadingMoreView;
     
     // Set up Infinite Scroll loading indicator
     CGRect frame = CGRectMake(0, _collectionView.contentSize.height, _collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
-    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
-    loadingMoreView.hidden = true;
-    [_collectionView addSubview:loadingMoreView];
+    _loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    _loadingMoreView.hidden = true;
+    [_collectionView addSubview:_loadingMoreView];
     
     UIEdgeInsets insets = _collectionView.contentInset;
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
@@ -85,8 +85,8 @@ InfiniteScrollActivityView *loadingMoreView;
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            isMoreDataLoading = false;
-            [loadingMoreView stopAnimating];
+            self.isMoreDataLoading = false;
+            [self.loadingMoreView stopAnimating];
             self.postQueryLimit = (int) posts.count + 5;
             
             self.postArray = posts;
@@ -106,9 +106,7 @@ InfiniteScrollActivityView *loadingMoreView;
 - (IBAction)didTapLogout:(id)sender {
     SceneDelegate *sceneDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:kMainStoryboardID bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:kLoginViewControllerID];
-    sceneDelegate.window.rootViewController = loginViewController;
+    [NavigationManager presentLoggedOutScreenWithSceneDelegate:sceneDelegate];
     
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
@@ -125,11 +123,10 @@ InfiniteScrollActivityView *loadingMoreView;
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                            cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
+    PostCollectionCell *const cell = [collectionView dequeueReusableCellWithReuseIdentifier:kPostCollectionCellID forIndexPath:indexPath];
     cell.post = _postArray[indexPath.item];
-    //NSLog(@"Caption for this post: %@", cell.post.caption);
-    cell.delegate = self;
     [cell refreshPost];
+    cell.delegate = self;
     return cell;
 }
 
@@ -155,19 +152,19 @@ InfiniteScrollActivityView *loadingMoreView;
 #pragma mark - UIScrollViewDelegate methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(!isMoreDataLoading){
+    if(!_isMoreDataLoading){
         // Calculate the position of one screen length before the bottom of the results
         int scrollViewContentHeight = _collectionView.contentSize.height;
         int scrollOffsetThreshold = scrollViewContentHeight - _collectionView.bounds.size.height;
         
         // When the user has scrolled past the threshold, start requesting
         if(scrollView.contentOffset.y > scrollOffsetThreshold && _collectionView.isDragging) {
-            isMoreDataLoading = true;
+            _isMoreDataLoading = true;
             
             // Update position of loadingMoreView, and start loading indicator
             CGRect frame = CGRectMake(0, _collectionView.contentSize.height, _collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
-            loadingMoreView.frame = frame;
-            [loadingMoreView startAnimating];
+            _loadingMoreView.frame = frame;
+            [_loadingMoreView startAnimating];
             
             // ... Code to load more results ...
             NSLog(@"Letting you know that we're pulling up more data! Post query limit: %d", _postQueryLimit);
@@ -190,6 +187,5 @@ InfiniteScrollActivityView *loadingMoreView;
         NSLog(@"HomeViewController preparing for segue!");
     }
 }
-
 
 @end

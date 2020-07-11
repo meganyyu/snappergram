@@ -40,4 +40,9 @@
     [self.timestampLabel setText:[_post getCreatedAtString]];
 }
 
+- (IBAction)onBack:(id)sender {
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 @end

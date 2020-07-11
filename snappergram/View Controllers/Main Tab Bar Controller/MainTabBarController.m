@@ -36,8 +36,11 @@ static NSString *const kFeedTabIcon = @"feed_tab";
     [super viewDidLoad];
     
     UIStoryboard *const storyboard = [UIStoryboard storyboardWithName:kMainStoryboardID bundle:nil];
-    UIViewController *const homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:kHomeNavigationControllerID];
-    UIViewController *const profileNavigationController = [storyboard instantiateViewControllerWithIdentifier:kProfileNavigationControllerID];
+    UINavigationController *const homeNavigationController = [storyboard instantiateViewControllerWithIdentifier:kHomeNavigationControllerID];
+    UINavigationController *const profileNavigationController = [storyboard instantiateViewControllerWithIdentifier:kProfileNavigationControllerID];
+    
+    ProfileViewController *profileViewController = (ProfileViewController *)profileNavigationController.topViewController;
+    profileViewController.user = [PFUser currentUser];
     
     self.viewControllers = @[homeNavigationController, profileNavigationController];
     
@@ -56,5 +59,6 @@ static NSString *const kFeedTabIcon = @"feed_tab";
     
     NSLog(@"Reached end of MainTabBarController viewDidLoad");
 }
+
 
 @end
