@@ -16,6 +16,7 @@
 #pragma mark - Constants
 
 static NSString *const kAuthorKey = @"author";
+static NSString *const kCreatedAtKey = @"createdAt";
 static NSString *const kPostCollectionCellID = @"PostCollectionCell";
 static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 
@@ -32,6 +33,8 @@ static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 @property (strong, nonatomic) NSArray *userPostArray;
 @property bool isMoreDataLoading;
 @property (nonatomic, strong) InfiniteScrollActivityView *loadingMoreView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+
 
 @end
 
@@ -51,15 +54,14 @@ static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
     _flowLayout.minimumInteritemSpacing = 0;
     _flowLayout.minimumLineSpacing = 0;
     
-    _postQueryLimit = 9;
+    _postQueryLimit = 18;
     _isMoreDataLoading = false;
     [self refreshProfile];
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(loadPosts)
               forControlEvents:UIControlEventValueChanged];
-    [_collectionView insertSubview:_refreshControl
-                           atIndex:0];
+    [_collectionView insertSubview:_refreshControl atIndex:0];
     
     // Set up Infinite Scroll loading indicator
     CGRect frame = CGRectMake(0, _collectionView.contentSize.height, _collectionView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
@@ -87,6 +89,7 @@ static NSString *const kPostDetailsSegueID = @"postDetailsSegue";
 
 - (void)loadPosts {
     PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:kCreatedAtKey];
     [postQuery whereKey:kAuthorKey equalTo:_user];
     postQuery.limit = _postQueryLimit;
     

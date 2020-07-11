@@ -17,6 +17,7 @@
 @property UIImagePickerController *imagePickerVC;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @property (weak, nonatomic) IBOutlet UITextView *captionTextView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -39,6 +40,8 @@
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         _imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+    
+    [self registerForKeyboardNotifications];
 }
 
 #pragma mark - User actions
@@ -57,7 +60,7 @@
 
 - (IBAction)didTapShare:(id)sender {
     UIImage *resizedImage = [self resizeImage:_photoImageView.image
-                                     withSize:CGSizeMake(200, 200)];
+                                     withSize:CGSizeMake(250, 250)];
     
     [Post postUserImage:resizedImage
             withCaption:_captionTextView.text
@@ -97,6 +100,40 @@ didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+#pragma mark - Acommodate keyboard
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+            selector:@selector(keyboardWasShown:)
+            name:UIKeyboardDidShowNotification object:nil];
+   [[NSNotificationCenter defaultCenter] addObserver:self
+             selector:@selector(keyboardWillBeHidden:)
+             name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification*)notification
+{
+    NSDictionary *const userInfo = [notification userInfo];
+    CGSize keyboardSize = [[userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
+    _scrollView.contentInset = contentInsets;
+    _scrollView.scrollIndicatorInsets = contentInsets;
+
+    CGRect frame = self.view.frame;
+    frame.size.height -= keyboardSize.height;
+    if (!CGRectContainsPoint(frame, _captionTextView.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, _captionTextView.frame.origin.y-keyboardSize.height);
+        [_scrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    _scrollView.contentInset = UIEdgeInsetsZero;
+    _scrollView.scrollIndicatorInsets = UIEdgeInsetsZero;
 }
 
 @end
