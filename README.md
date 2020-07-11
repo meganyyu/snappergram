@@ -48,7 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories: [Longer walkthrough](http://g.recordit.co/A9WOCY0MHI.gif)
 
-<img src='http://g.recordit.co/pVLdWKFbBK.gif' title='Video Walkthrough 1' width='400' alt='Video Walkthrough 1' /> &nbsp; <img src='http://g.recordit.co/y2dpLKvjCR.gif' title='Video Walkthrough 2' width='400' alt='Video Walkthrough 1' />
+<img src='http://g.recordit.co/cKWaluthEp.gif' title='Login Walkthrough' width='400' alt='Login Walkthrough' /> &nbsp; <img src='http://g.recordit.co/3BQRYWvNVw.gif' title='Post Creation Walkthrough' width='400' alt='Post Creation Walkthrough' />
 
 GIF created with [Recordit](http://recordit.co/).
 
