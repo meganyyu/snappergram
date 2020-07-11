@@ -2,7 +2,7 @@
 
 **snappergram** is a photo sharing app using Parse as its backend.
 
-Time spent: **9** hours spent in total
+Time spent: **25** hours spent in total
 
 ## User Stories
 
@@ -21,9 +21,10 @@ The following **optional** features are implemented:
 - [x] Run your app on your phone and use the camera to take the photo
 - [ ] Style the login page to look like the real Instagram login page.
 - [ ] Style the feed to look like the real Instagram feed.
-- [ ] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
-- [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
-- [ ] Show the username and creation time for each post
+- [x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user. AKA, tabs for Home Feed and Profile
+  - [x] did this programmatically!
+- [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
+- [x] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - User Profiles:
   - [ ] Allow the logged in user to add a profile photo
@@ -35,18 +36,19 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] User can view posts they've created on their own profile page
+- [x] Accommodate keyboard when typing caption
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. how to build entire UI programmatically
+2. using a header in a collection view instead of a separate view
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' /> &nbsp <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' /> &nbsp <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' />
 
 GIF created with [Recordit](http://recordit.co/).
 
@@ -54,12 +56,12 @@ GIF created with [Recordit](http://recordit.co/).
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 - [Parse](https://github.com/parse-community/parse-server) - backend framework
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+- building tab bar controller programmatically
 
 ## License
 
