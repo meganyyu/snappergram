@@ -46,9 +46,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented user stories: [Longer walkthrough](http://g.recordit.co/A9WOCY0MHI.gif)
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' /> &nbsp <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' /> &nbsp <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough 1' width='300' alt='Video Walkthrough 1' />
+<img src='http://g.recordit.co/pVLdWKFbBK.gif' title='Video Walkthrough 1' width='400' alt='Video Walkthrough 1' /> &nbsp; <img src='http://g.recordit.co/y2dpLKvjCR.gif' title='Video Walkthrough 2' width='400' alt='Video Walkthrough 1' />
 
 GIF created with [Recordit](http://recordit.co/).
 
